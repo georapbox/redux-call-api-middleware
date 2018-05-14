@@ -1,5 +1,5 @@
 {
-  "name": "webpack-library-starter-kit",
+  "name": "redux-call-api-middleware",
   "version": "0.1.0",
   "description": "Redux middleware to perform api calls reducing action creators boilerplate",
   "main": "dist/callAPIMiddleware.js",
