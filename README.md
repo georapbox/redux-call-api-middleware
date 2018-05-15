@@ -1,10 +1,9 @@
 [![npm version](https://img.shields.io/npm/v/@georapbox/redux-call-api-middleware.svg?style=flat-square)](https://www.npmjs.com/package/@georapbox/redux-call-api-middleware)
+[![Travis](https://img.shields.io/travis/georapbox/redux-call-api-middleware/master.svg?style=flat-square)](https://travis-ci.org/georapbox/redux-call-api-middleware)
+[![Codecov](https://img.shields.io/codecov/c/github/georapbox/redux-call-api-middleware/master.svg?style=flat-square)](https://codecov.io/gh/georapbox/redux-call-api-middleware)
 [![Dependencies](https://david-dm.org/georapbox/redux-call-api-middleware.svg?style=flat-square)](https://david-dm.org/georapbox/redux-call-api-middleware)
 [![devDependency Status](https://david-dm.org/georapbox/redux-call-api-middleware/dev-status.svg?style=flat-square)](https://david-dm.org/georapbox/redux-call-api-middleware#info=devDependencies)
 [![npm license](https://img.shields.io/npm/l/@georapbox/redux-call-api-middleware.svg?style=flat-square)](https://www.npmjs.com/package/@georapbox/redux-call-api-middleware)
-
-<!-- [![Travis](https://img.shields.io/travis/georapbox/redux-call-api-middleware/master.svg?style=flat-square)](https://travis-ci.org/georapbox/redux-call-api-middleware.svg?branch=master) -->
-<!-- [![Codecov](https://img.shields.io/codecov/c/github/georapbox/redux-call-api-middleware/master.svg?style=flat-square)](https://codecov.io/gh/georapbox/redux-call-api-middleware) -->
 
 # redux-call-api-middleware
 
@@ -57,10 +56,6 @@ export function loadPosts(userId) {
   }
 }
 ```
-
-## TODO
-
-- Write tests
 
 ## License
 
