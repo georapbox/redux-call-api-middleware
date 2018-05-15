@@ -27,7 +27,7 @@ export function loadPosts(userId) {
     // Types of actions to emit before and after (required)
     types: {
       requestType: 'LOAD_POSTS_REQUEST',
-      succesType: 'LOAD_POSTS_SUCCESS',
+      successType: 'LOAD_POSTS_SUCCESS',
       failureType: 'LOAD_POSTS_FAILURE'
     },
 
