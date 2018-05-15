@@ -6,9 +6,9 @@ export default ({ dispatch, getState }) => next => action => {
     callAPI,
     shouldCallAPI = () => true,
     payload = {},
-    onRequestDispatched = () => { },
-    onSuccessDispatched = () => { },
-    onFailureDispatched = () => { }
+    onRequestDispatched = () => {},
+    onSuccessDispatched = () => {},
+    onFailureDispatched = () => {}
   } = action;
 
   if (!types) {
