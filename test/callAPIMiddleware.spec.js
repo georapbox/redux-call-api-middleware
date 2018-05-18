@@ -7,6 +7,8 @@ const { expect } = chai;
 
 chai.use(sinonChai);
 
+const noop = () => {};
+
 const types = {
   requestType: 'REQUEST_TYPE',
   successType: 'SUCCESS_TYPE',
@@ -114,6 +116,48 @@ describe('callAPIMiddleware', () => {
     invoke(action);
 
     expect(store.dispatch).to.not.have.been.called;
+  });
+
+  it('should call onRequestDispatched callback function', () => {
+    const { invoke } = create();
+
+    const action = {
+      types,
+      callAPI: () => Promise.resolve(true),
+      onRequestDispatched: sinon.spy()
+    };
+
+    invoke(action);
+
+    expect(action.onRequestDispatched).to.have.been.called;
+  });
+
+  it('should call onSuccessDispatched callback function', () => {
+    const { invoke } = create();
+
+    const action = {
+      types,
+      callAPI: () => Promise.resolve(true),
+      onSuccessDispatched: sinon.spy()
+    };
+
+    invoke(action).then(() => {
+      expect(action.onSuccessDispatched).to.have.been.called;
+    });
+  });
+
+  it('should call onFailureDispatched callback function', () => {
+    const { invoke } = create();
+
+    const action = {
+      types,
+      callAPI: () => Promise.reject(false),
+      onFailureDispatched: sinon.spy()
+    };
+
+    invoke(action).then(() => {
+      expect(action.onFailureDispatched).to.have.been.called;
+    });
   });
 
   it('should throw if types is not plain object', () => {
