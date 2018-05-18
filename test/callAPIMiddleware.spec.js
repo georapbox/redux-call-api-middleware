@@ -66,15 +66,12 @@ describe('callAPIMiddleware', () => {
       callAPI: () => Promise.reject(false)
     };
 
-    invoke(action).then(
-      () => {},
-      () => {
-        expect(store.dispatch).to.have.been.calledWith({
-          type: 'FAILURE_TYPE',
-          error: false
-        });
-      }
-    );
+    invoke(action).then(noop, () => {
+      expect(store.dispatch).to.have.been.calledWith({
+        type: 'FAILURE_TYPE',
+        error: false
+      });
+    });
 
     expect(store.dispatch).to.have.been.calledWith({
       type: 'REQUEST_TYPE'
@@ -118,7 +115,7 @@ describe('callAPIMiddleware', () => {
     expect(store.dispatch).to.not.have.been.called;
   });
 
-  it('should call onRequestDispatched callback function', () => {
+  it('should call onRequestDispatched callback', () => {
     const { invoke } = create();
 
     const action = {
@@ -132,7 +129,7 @@ describe('callAPIMiddleware', () => {
     expect(action.onRequestDispatched).to.have.been.called;
   });
 
-  it('should call onSuccessDispatched callback function', () => {
+  it('should call onSuccessDispatched callback', () => {
     const { invoke } = create();
 
     const action = {
@@ -146,7 +143,7 @@ describe('callAPIMiddleware', () => {
     });
   });
 
-  it('should call onFailureDispatched callback function', () => {
+  it('should call onFailureDispatched callback', () => {
     const { invoke } = create();
 
     const action = {
