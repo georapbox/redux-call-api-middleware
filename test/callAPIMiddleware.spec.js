@@ -178,7 +178,7 @@ describe('callAPIMiddleware', () => {
       callAPI: () => Promise.resolve(true)
     };
 
-    expect(() => invoke(action)).to.throw();
+    expect(() => invoke(action)).to.throw(Error);
   });
 
   it('should throw if any of the types object value is not a string', () => {
@@ -193,7 +193,7 @@ describe('callAPIMiddleware', () => {
       callAPI: () => Promise.resolve(true)
     };
 
-    expect(() => invoke(action)).to.throw();
+    expect(() => invoke(action)).to.throw(Error);
   });
 
   it('should throw if callAPI is not a function', () => {
@@ -204,6 +204,6 @@ describe('callAPIMiddleware', () => {
       callAPI: Promise.resolve()
     };
 
-    expect(() => invoke(action)).to.throw();
+    expect(() => invoke(action)).to.throw(TypeError);
   });
 });
