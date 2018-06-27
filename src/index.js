@@ -45,7 +45,7 @@ export default ({ dispatch, getState }) => next => action => {
 
   onRequestDispatched(payload, dispatch, getState());
 
-  return callAPI().then(response => {
+  return callAPI(dispatch, getState()).then(response => {
     const returnAction = dispatch({
       ...payload,
       response,
