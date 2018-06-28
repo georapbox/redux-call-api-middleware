@@ -34,7 +34,7 @@ export function loadPosts(userId) {
     shouldCallAPI: state => !state.posts[userId],
 
     // Perform the fetching (required)
-    callAPI: () => fetch(`http://myapi.com/users/${userId}/posts`),
+    callAPI: (dispatch, state) => fetch(`http://myapi.com/users/${userId}/posts`),
 
     // Arguments to inject in begin/end actions (optional); defaults to `{}`
     payload: { userId },
