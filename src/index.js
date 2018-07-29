@@ -28,8 +28,12 @@ export default ({ dispatch, getState }) => next => action => {
     throw new TypeError('Expected callAPI to be a function.');
   }
 
-  if (!shouldCallAPI(getState())) {
-    return;
+  const isAPICalled = shouldCallAPI(getState());
+
+  if (!isAPICalled) {
+    return Promise.resolve({
+      shouldCallAPI: isAPICalled
+    });
   }
 
   const { requestType, successType, failureType } = types;
