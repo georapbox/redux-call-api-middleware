@@ -1,6 +1,6 @@
 {
   "name": "@georapbox/redux-call-api-middleware",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Redux middleware to perform api calls reducing action creators boilerplate",
   "main": "dist/callAPIMiddleware.js",
   "files": [
